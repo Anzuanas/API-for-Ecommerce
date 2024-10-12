@@ -1,11 +1,17 @@
-const mongoose=require("mongoose")
+const mongoose=require("mongoose");
+const { type } = require("os");
 
 
 const CartSchema=new mongoose.Schema(
     {
         userId:{type:String, required:true , },
-        desc:{type:String, required:true,},
-        
+        products:[
+            {producId:{type:String},
+             quantity:{type:Number,
+                default:1,
+             },
+            }
+        ],
 
 
     },
